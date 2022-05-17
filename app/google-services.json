@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "164296392813",
+    "project_id": "chat-48a9a",
+    "storage_bucket": "chat-48a9a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:164296392813:android:c7937433958542b7f27f64",
+        "android_client_info": {
+          "package_name": "com.example.studdybuddy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "164296392813-5mlnst7qv1p6fchsislnnnrhrgdjqnc3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQvbU-CeqMiBGb9j49yuXpOjvHfvou6Yw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "164296392813-5mlnst7qv1p6fchsislnnnrhrgdjqnc3.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
