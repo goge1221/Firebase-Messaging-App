@@ -1,8 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">StuddyBuddy</string>
-    <string name="title_home">Home</string>
-    <string name="title_chat">Chat</string>
-    <string name="title_notifications">Notifications</string>
     <string name="log_in_welcome_back">Welcome Back!</string>
     <string name="log_in">Log In</string>
     <string name="create_new_account">Create new Account</string>
