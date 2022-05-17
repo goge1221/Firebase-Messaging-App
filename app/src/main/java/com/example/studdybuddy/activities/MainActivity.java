@@ -1,7 +1,10 @@
-package com.example.studdybuddy;
+package com.example.studdybuddy.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
+import com.example.studdybuddy.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        Intent intent = getIntent();
+        Toast.makeText(this, "Welcome " + intent.getStringExtra("USER_NAME"), Toast.LENGTH_SHORT).show();
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
