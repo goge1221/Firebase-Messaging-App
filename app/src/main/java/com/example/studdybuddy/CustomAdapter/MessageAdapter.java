@@ -76,8 +76,8 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
 
         void setData(Message message){
-            binding.myMessage.setText(message.message);
-            binding.textDateTime.setText(message.date);
+            binding.myMessage.setText(message.message.trim());
+            binding.textDateTime.setText(message.date.trim());
         }
     }
 
@@ -91,8 +91,8 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
 
         void setData(Message mesasge){
-            binding.receivedMessage.setText(mesasge.message);
-            binding.textDateTime.setText(mesasge.date);
+            binding.receivedMessage.setText(mesasge.message.trim());
+            binding.textDateTime.setText(mesasge.date.trim());
         }
 
     }

@@ -8,4 +8,6 @@ public class Message {
     public String message;
     public String date;
     public Date dateObject;
+    public String conversionId;
+    public String conversionName;
 }
