@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StuddyBuddy">
         <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
             android:name=".activities.DisplayUsersActivity"
             android:exported="false" />
         <activity

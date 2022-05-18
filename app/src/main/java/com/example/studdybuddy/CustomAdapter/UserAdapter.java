@@ -4,6 +4,7 @@ import android.renderscript.ScriptGroup;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -54,7 +55,12 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         void setUserData(User user){
             binding.userName.setText(user.userName);
             binding.userEmail.setText(user.email);
+       //     binding.getRoot().setOnClickListener(view -> getMeToUserChat());
             //Set Immage muss noch her
+        }
+
+        void getMeToUserChat(){
+
         }
     }
 }
