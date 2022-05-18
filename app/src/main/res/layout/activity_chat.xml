@@ -7,6 +7,7 @@
     android:animateLayoutChanges="true"
     tools:context=".activities.ChatActivity">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/displayChatMessages"
         android:layout_width="match_parent"

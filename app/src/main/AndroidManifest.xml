@@ -12,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StuddyBuddy">
         <activity
-            android:name=".ChatActivity"
-            android:exported="false" />
+            android:name=".activities.ChatActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".activities.DisplayUsersActivity"
             android:exported="false" />

@@ -1,23 +1,22 @@
 package com.example.studdybuddy.CustomAdapter;
 
-import android.renderscript.ScriptGroup;
+import android.content.Intent;
 import android.view.LayoutInflater;
-import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.studdybuddy.activities.ChatActivity;
 import com.example.studdybuddy.databinding.DisplayOneUserBinding;
-import com.example.studdybuddy.CustomAdapter.UserAdapter;
 import com.example.studdybuddy.entity.User;
+import com.example.studdybuddy.utilities.Constants;
 
 import java.util.List;
 
 public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder>{
 
     private final List<User> userList;
-
     public UserAdapter(List<User> users){
         userList = users;
     }
@@ -55,12 +54,13 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         void setUserData(User user){
             binding.userName.setText(user.userName);
             binding.userEmail.setText(user.email);
-       //     binding.getRoot().setOnClickListener(view -> getMeToUserChat());
+            binding.getRoot().setOnClickListener(view -> {
+               Intent intent= new Intent(binding.getRoot().getContext(), ChatActivity.class);
+               intent.putExtra(Constants.KEY_USER, user);
+               binding.getRoot().getContext().startActivity(intent);
+            });
             //Set Immage muss noch her
         }
 
-        void getMeToUserChat(){
-
-        }
     }
 }

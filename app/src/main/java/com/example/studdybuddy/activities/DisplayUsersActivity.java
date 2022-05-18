@@ -2,13 +2,12 @@ package com.example.studdybuddy.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.studdybuddy.CustomAdapter.UserAdapter;
-import com.example.studdybuddy.R;
 import com.example.studdybuddy.databinding.ActivityDisplayUsersBinding;
 import com.example.studdybuddy.entity.User;
 import com.example.studdybuddy.utilities.Constants;
