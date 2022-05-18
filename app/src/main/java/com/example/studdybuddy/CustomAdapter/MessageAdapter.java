@@ -16,15 +16,13 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
 
     private final List<Message> chatMessages;
     private final String senderId;
-    private final String receiverId;
 
     public static final int VIEW_TYPE_SENT = 1;
     public static final int VIEW_TYPE_RECEIVED = 2;
 
-    public MessageAdapter(List<Message> chatMessages, String senderId, String receiverId) {
+    public MessageAdapter(List<Message> chatMessages, String senderId) {
         this.chatMessages = chatMessages;
         this.senderId = senderId;
-        this.receiverId = receiverId;
     }
 
     @Override

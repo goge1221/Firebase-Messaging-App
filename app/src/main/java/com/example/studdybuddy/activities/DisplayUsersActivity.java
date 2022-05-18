@@ -57,6 +57,7 @@ public class DisplayUsersActivity extends AppCompatActivity {
                             user.userName = snapshot.getString(Constants.KEY_NAME);
                             user.email = snapshot.getString(Constants.KEY_EMAIL);
                             user.token = snapshot.getString(Constants.KEY_FCM_TOKEN);
+                            user.id = snapshot.getId();
                             user.mentor = false;
                             users.add(user);
                         }
