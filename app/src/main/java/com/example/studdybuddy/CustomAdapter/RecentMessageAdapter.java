@@ -1,6 +1,7 @@
 package com.example.studdybuddy.CustomAdapter;
 
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -57,8 +58,9 @@ public class RecentMessageAdapter extends RecyclerView.Adapter<RecentMessageAdap
         }
 
         void setData(Message chatMessage) {
-            binding.recentMessage.setText(chatMessage.message);
             binding.userNameRecent.setText(chatMessage.conversionName);
+            binding.recentMessage.setText(chatMessage.message);
+            if(chatMessage.message.isEmpty()) binding.recentMessage.setText("An image was sent.");
             binding.getRoot().setOnClickListener(view -> {
                 User user = new User();
                 user.userName = chatMessage.conversionName;

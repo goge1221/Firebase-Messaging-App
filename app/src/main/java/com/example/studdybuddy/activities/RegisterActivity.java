@@ -61,6 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
                 .addOnSuccessListener(documentReference -> {
                     displayProcessIcon(false);
                     savePreferences.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
+             //       savePreferences.putBoolean(Constants.KEY_IS_MENTOR, false);
                     savePreferences.putString(Constants.KEY_USER_ID, documentReference.getId());
                     savePreferences.putString(Constants.KEY_NAME, registerUserBinding.registerUserName.getText().toString());
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);

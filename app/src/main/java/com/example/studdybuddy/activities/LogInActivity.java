@@ -69,6 +69,7 @@ public class LogInActivity extends AppCompatActivity {
                                     .getDocuments().size() > 0){
                                 DocumentSnapshot documentSnapshot = task.getResult().getDocuments().get(0);
                                 savePreferences.putBoolean(Constants.KEY_IS_SIGNED_IN, true);
+                             //   savePreferences.putBoolean(Constants.KEY_IS_MENTOR, false);
                                 savePreferences.putString(Constants.KEY_USER_ID, documentSnapshot.getId());
                                 savePreferences.putString(Constants.KEY_NAME, documentSnapshot.getString(Constants.KEY_NAME));
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);

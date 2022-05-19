@@ -3,11 +3,23 @@ package com.example.studdybuddy.activities;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+import androidx.fragment.app.DialogFragment;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.util.Log;
 import android.view.View;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.example.studdybuddy.CustomAdapter.MessageAdapter;
+import com.example.studdybuddy.R;
 import com.example.studdybuddy.databinding.ActivityChatBinding;
 import com.example.studdybuddy.entity.Message;
 import com.example.studdybuddy.entity.User;
@@ -29,6 +41,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
 
+import javax.annotation.Nullable;
+
 
 public class ChatActivity extends AppCompatActivity {
     static {
@@ -42,6 +56,7 @@ public class ChatActivity extends AppCompatActivity {
     private FirebaseFirestore database;
     private String conversionId = null;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,8 +69,44 @@ public class ChatActivity extends AppCompatActivity {
         messageAdapter = new MessageAdapter(chatMessages, savePreferences.getString(Constants.KEY_USER_ID));
         binding.displayChatMessages.setAdapter(messageAdapter);
         database = FirebaseFirestore.getInstance();
-        binding.sendLayout.setOnClickListener(view -> sendMessage());
+        binding.sendLayout.setOnClickListener(view -> sendMessage(false));
         listenMessages();
+        binding.sendImageButton.setOnClickListener(view -> sendPhoto());
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == RESULT_OK){
+            sendMessage(true);
+        }
+    }
+
+
+    private void sendPhoto(){
+        Dialog dialog = new Dialog(this);
+        dialog.setContentView(R.layout.pick_from_gallery_or_camera);
+        ImageView camera = dialog.findViewById(R.id.camera);
+        dialog.show();
+
+        camera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent takePicture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+                startActivityForResult(takePicture, 0);
+                dialog.dismiss();
+            }
+        });
+        ImageView gallery = dialog.findViewById(R.id.galery);
+        gallery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent pickPhoto = new Intent(Intent.ACTION_PICK,
+                        android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+                startActivityForResult(pickPhoto , 1);
+                dialog.dismiss();
+            }
+        });
     }
 
 
@@ -105,13 +156,21 @@ public class ChatActivity extends AppCompatActivity {
     };
 
 
-    private void sendMessage(){
+    private void sendMessage(boolean image){
         HashMap<String, Object> message = new HashMap<>();
         message.put(Constants.KEY_SENDER_ID, savePreferences.getString(Constants.KEY_USER_ID));
         message.put(Constants.KEY_RECEIVER_ID, user.id);
-        message.put(Constants.KEY_MESSAGE, binding.message.getText().toString().trim());
+        if(image){
+            message.put(Constants.KEY_MESSAGE, "SHOW_IMAGE");
+        }
+        else {
+            message.put(Constants.KEY_MESSAGE, binding.message.getText().toString().trim());
+        }
         message.put(Constants.KEY_TIMESTAMP, new Date());
-        database.collection(Constants.KEY_COLLECTION_CHAT).add(message);
+        if(binding.message.getText().toString().trim().isEmpty() && !image){
+            Toast.makeText(this, "Please enter a text.", Toast.LENGTH_SHORT).show();
+        }
+        else database.collection(Constants.KEY_COLLECTION_CHAT).add(message);
         if(conversionId != null){
             updateConversion(binding.message.getText().toString());
         } else{
@@ -183,4 +242,5 @@ public class ChatActivity extends AppCompatActivity {
         onBackPressed();
         return true;
     }
+
 }

@@ -10,4 +10,5 @@ public class Message {
     public Date dateObject;
     public String conversionId;
     public String conversionName;
+    public boolean text = true;
 }

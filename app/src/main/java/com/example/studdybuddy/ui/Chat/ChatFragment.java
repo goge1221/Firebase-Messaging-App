@@ -38,8 +38,6 @@ public class ChatFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        ChatViewModel chatViewModel =
-                new ViewModelProvider(this).get(ChatViewModel.class);
 
         binding = FragmentChatBinding.inflate(inflater, container, false);
         View root = binding.getRoot();

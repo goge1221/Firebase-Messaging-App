@@ -6,6 +6,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/_4sdp">
 
+
+    <ImageView
+        android:id="@+id/messageReceivedImage"
+        android:layout_width="@dimen/_160sdp"
+        android:layout_height="@dimen/_160sdp"
+        android:background="@drawable/ic_baseline_image_24"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textDateTimeForImage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blue_500"
+        android:textSize="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
+        android:paddingLeft="@dimen/_10sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@+id/messageReceivedImage" />
+
     <TextView
         android:id="@+id/receivedMessage"
         android:layout_width="0dp"
