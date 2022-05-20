@@ -13,9 +13,9 @@
         android:layout_height="@dimen/_160sdp"
         android:background="@drawable/ic_baseline_image_24"
         app:layout_constraintStart_toStartOf="parent"
+        android:backgroundTint="#09188F"
         android:visibility="gone"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <TextView
         android:id="@+id/textDateTimeForImage"
@@ -36,6 +36,7 @@
         android:background="@drawable/background_message_received"
         android:paddingStart="@dimen/_12sdp"
         android:paddingTop="@dimen/_8sdp"
+        android:backgroundTint="#09188F"
         android:paddingEnd="@dimen/_12sdp"
         android:paddingBottom="@dimen/_8sdp"
         app:layout_constraintWidth_max="wrap"

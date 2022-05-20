@@ -6,9 +6,22 @@
     android:padding="@dimen/_8sdp">
 
     <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/mentorImage"
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:background="@drawable/log_out_background"
+        android:scaleType="centerCrop"
+        android:visibility="visible"
+        android:src="@drawable/ic_round_school_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:riv_oval="true" />
+
+    <com.makeramen.roundedimageview.RoundedImageView
         android:id="@+id/userImage"
         android:layout_width="@dimen/_35sdp"
         android:layout_height="@dimen/_35sdp"
+        android:src="@drawable/ic_round_person_24"
         android:background="@drawable/log_out_background"
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"

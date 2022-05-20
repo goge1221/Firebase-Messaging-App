@@ -6,6 +6,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.example.studdybuddy.R;
+import com.example.studdybuddy.firebase.MessagingService;
 import com.example.studdybuddy.utilities.Constants;
 import com.example.studdybuddy.utilities.SavePreferences;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -33,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         getToken();
+
+        MessagingService messagingService = new MessagingService();
+        messagingService.getUsers();
 
         BottomNavigationView navView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each

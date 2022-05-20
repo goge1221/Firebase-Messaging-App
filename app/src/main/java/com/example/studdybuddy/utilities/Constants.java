@@ -2,6 +2,10 @@ package com.example.studdybuddy.utilities;
 
 import android.net.Uri;
 
+import com.example.studdybuddy.entity.User;
+
+import java.util.HashSet;
+
 public class Constants {
     public static final String KEY_COLLECTION_USERS = "users";
     public static final String KEY_NAME = "name";
@@ -22,4 +26,17 @@ public class Constants {
     public static final String KEY_RECEIVER_NAME = "receiverName";
     public static final String KEY_LAST_MESSAGE = "lastMessage";
     public static final String KEY_IS_MENTOR = "mentor";
+    public static HashSet<User>usersGlobal = new HashSet<>();
+
+
+    public static void addUser(User user){
+        for(User toCompare : usersGlobal){
+            if(toCompare.email.equals(user.email))
+                return;
+        }
+        usersGlobal.add(user);
+    }
+
+
+
 }

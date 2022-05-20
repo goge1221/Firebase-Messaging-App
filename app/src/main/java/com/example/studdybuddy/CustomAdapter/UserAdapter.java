@@ -2,6 +2,7 @@ package com.example.studdybuddy.CustomAdapter;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -54,6 +55,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.UserViewHolder
         void setUserData(User user){
             binding.userName.setText(user.userName);
             binding.userEmail.setText(user.email);
+            if(user.mentor){
+                binding.userImage.setVisibility(View.INVISIBLE);
+            }
             binding.getRoot().setOnClickListener(view -> {
                Intent intent= new Intent(binding.getRoot().getContext(), ChatActivity.class);
                intent.putExtra(Constants.KEY_USER, user);

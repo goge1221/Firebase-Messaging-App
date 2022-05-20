@@ -127,8 +127,18 @@ public class MessageAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder
         }
 
         void setData(Message mesasge){
-            binding.receivedMessage.setText(mesasge.message.trim());
-            binding.textDateTime.setText(mesasge.date.trim());
+
+            if(mesasge.message.equals("SHOW_IMAGE")) {
+                binding.receivedMessage.setVisibility(View.GONE);
+                binding.textDateTime.setVisibility(View.GONE);
+                binding.messageReceivedImage.setVisibility(View.VISIBLE);
+                binding.textDateTimeForImage.setVisibility(View.VISIBLE);
+                binding.textDateTimeForImage.setText(mesasge.date.trim());
+            }
+            else{
+                binding.textDateTime.setText(mesasge.date.trim());
+                binding.receivedMessage.setText(mesasge.message);
+            }
         }
 
     }

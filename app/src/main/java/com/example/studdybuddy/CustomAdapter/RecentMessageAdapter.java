@@ -1,8 +1,10 @@
 package com.example.studdybuddy.CustomAdapter;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
@@ -13,7 +15,9 @@ import com.example.studdybuddy.activities.ChatActivity;
 import com.example.studdybuddy.databinding.DisplayUserRecentConversationBinding;
 import com.example.studdybuddy.entity.Message;
 import com.example.studdybuddy.entity.User;
+import com.example.studdybuddy.firebase.MessagingService;
 import com.example.studdybuddy.utilities.Constants;
+import com.example.studdybuddy.utilities.SavePreferences;
 
 import java.util.List;
 
@@ -58,8 +62,15 @@ public class RecentMessageAdapter extends RecyclerView.Adapter<RecentMessageAdap
         }
 
         void setData(Message chatMessage) {
+
             binding.userNameRecent.setText(chatMessage.conversionName);
             binding.recentMessage.setText(chatMessage.message);
+
+            for(User user: Constants.usersGlobal){
+                if(user.userName.equals(chatMessage.conversionName) && user.mentor)
+                    binding.userImage.setVisibility(View.INVISIBLE);
+            }
+
             if(chatMessage.message.isEmpty()) binding.recentMessage.setText("An image was sent.");
             binding.getRoot().setOnClickListener(view -> {
                 User user = new User();

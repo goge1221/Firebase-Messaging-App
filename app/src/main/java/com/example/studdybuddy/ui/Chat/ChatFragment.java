@@ -25,6 +25,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -97,7 +98,7 @@ public class ChatFragment extends Fragment {
                     }
                 }
             }
-            Collections.sort(recentConversations, (message1, message2) -> message1.dateObject.compareTo(message2.dateObject));
+            Collections.sort(recentConversations, Comparator.comparing(message -> message.dateObject));
             recentMessageAdapter.notifyDataSetChanged();
             binding.recentChatView.smoothScrollToPosition(0);
             binding.recentChatView.setVisibility(View.VISIBLE);
