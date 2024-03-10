@@ -7,16 +7,16 @@ StudyBuddy is a collaborative platform developed to facilitate the exchange of e
 - **Authentication Process:** Implemented a robust authentication mechanism using Google's Firebase Firestore. This process includes user registration and login, ensuring secure access to the platform.
 
 <p align="center">
-  <img src="https://github.com/goge1221/Firebase-Messaging-App/assets/75140192/b932aac6-fe74-42e7-bf76-72adb9834fc8" alt="First Image" width="45%">
-  <img src="https://github.com/goge1221/Firebase-Messaging-App/assets/75140192/e62fd5a5-64ad-4bc4-8acc-66957dab90d9" alt="Second Image" width="45%">
+  <img src="https://github.com/goge1221/Firebase-Messaging-App/assets/75140192/b932aac6-fe74-42e7-bf76-72adb9834fc8" alt="First Image" width="20%">
+  <img src="https://github.com/goge1221/Firebase-Messaging-App/assets/75140192/e62fd5a5-64ad-4bc4-8acc-66957dab90d9" alt="Second Image" width="20%">
 </p>
 
 - **Chat Functionality:** Designed to enable seamless communication within the StudyBuddy platform, allowing users to exchange messages, share experiences, and ask questions in real-time.
 
 <p align="center">
-  <img src="https://github.com/goge1221/Firebase-Messaging-App/assets/75140192/0d9f47a8-d549-42e2-afe1-b4fb703f5300" alt="First Image" width="30%">
-  <img src="https://github.com/goge1221/Firebase-Messaging-App/assets/75140192/7da7bb37-2527-4035-bec2-0da235d7c91d" alt="Second Image" width="30%">
-  <img src="https://github.com/goge1221/Firebase-Messaging-App/assets/75140192/e89345a9-8cc1-40f4-bd8d-e1efe82a9f48" alt="Second Image" width="30%">
+  <img src="https://github.com/goge1221/Firebase-Messaging-App/assets/75140192/0d9f47a8-d549-42e2-afe1-b4fb703f5300" alt="First Image" width="20%">
+  <img src="https://github.com/goge1221/Firebase-Messaging-App/assets/75140192/7da7bb37-2527-4035-bec2-0da235d7c91d" alt="Second Image" width="20%">
+  <img src="https://github.com/goge1221/Firebase-Messaging-App/assets/75140192/e89345a9-8cc1-40f4-bd8d-e1efe82a9f48" alt="Second Image" width="20%">
 </p>
 
 ### Technology Stack
